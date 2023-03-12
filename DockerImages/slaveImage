@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+RUN apt update && apt install -y sudo vim iputils-ping software-properties-common ssh whois
+RUN useradd  -m -p "$(mkpasswd -m sha-512 'ansible123@')" ansible-user
+RUN usermod -aG sudo ansible-user
+RUN service ssh start
+CMD ["/bin/bash"]

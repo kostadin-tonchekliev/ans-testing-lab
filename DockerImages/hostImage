@@ -1,0 +1,5 @@
+FROM ubuntu:latest
+RUN apt update && apt install -y vim iputils-ping software-properties-common
+RUN apt-add-repository ppa:ansible/ansible && apt update
+RUN apt install -y ansible
+COPY inventory /root/inventory

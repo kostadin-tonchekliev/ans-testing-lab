@@ -1,0 +1,18 @@
+version: '3.9'
+name: ansible-testing-lab
+services:
+  host:
+    image: ktonchekliev/kosta:host
+    container_name: ansible-host
+    hostname: ansible-testing-host
+    tty: true
+  secondary1:
+    image: ktonchekliev/kosta:secondary
+    container_name: ansible_secondary1
+    hostname: ansible-testing-secondary1
+    tty: true
+  secondary2:
+    image: ktonchekliev/kosta:secondary
+    container_name: ansible_secondary2
+    hostname: ansible-testing-secondary2
+    tty: true
